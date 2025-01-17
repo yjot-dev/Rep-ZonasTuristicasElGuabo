@@ -1,0 +1,15 @@
+<resources>
+    <!-- Base application dark theme. -->
+    <style name="Theme.ZonasTuristicasElGuabo" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primaryDark</item>
+        <item name="colorPrimaryContainer">@color/primaryContainerDark</item>
+        <item name="colorOnPrimary">@color/onPrimaryDark</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/secondaryDark</item>
+        <item name="colorSecondaryContainer">@color/secondaryContainerDark</item>
+        <item name="colorOnSecondary">@color/onSecondaryDark</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryContainer</item>
+    </style>
+</resources>
