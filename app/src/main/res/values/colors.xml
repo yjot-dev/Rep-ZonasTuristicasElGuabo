@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Color background icon -->
+    <color name="ic_launcher_background">#446732</color>
+    <!-- Tema claro -->
+    <color name="colorPrimaryLight">#B8AB91</color>
+    <color name="colorPrimaryVariantLight">#FFB28F4F</color>
+    <color name="colorSecondaryLight">#6F9D59</color>
+    <color name="colorSecondaryVariantLight">#B0D19F</color>
+    <color name="colorOnSecondaryLight">#000000</color>
+    <color name="colorOnPrimaryLight">#000000</color>
+    <!-- Tema oscuro -->
+    <color name="colorPrimaryDark">#BC7802</color>
+    <color name="colorPrimaryVariantDark">#644205</color>
+    <color name="colorSecondaryDark">#6D7E65</color>
+    <color name="colorSecondaryVariantDark">#446732</color>
+    <color name="colorOnSecondaryDark">#FFFFFF</color>
+    <color name="colorOnPrimaryDark">#FFFFFF</color>
+</resources>

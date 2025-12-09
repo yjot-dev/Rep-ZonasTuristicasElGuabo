@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ATEG</string>
+    <string name="title_fragment_map">El Guabo</string>
+    <string name="title_fragment_info1">Cascadas de Manuel</string>
+    <string name="title_fragment_info2">Bajo Alto</string>
+    <string name="title_fragment_info3">El Mirador</string>
+    <string name="title_fragment_info4">Quinta Ines Maria</string>
+    <string name="title_fragment_info5">Camino al Paraiso</string>
+    <string name="image_fragment_info">Imagen del lugar</string>
+    <string name="description_fragment_info">Descripcion del lugar</string>
+</resources>

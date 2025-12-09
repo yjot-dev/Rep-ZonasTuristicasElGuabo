@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".application.mvvm.view.InfoFragment">
+    <include
+        android:id="@+id/includeToolbar"
+        layout="@layout/toolbar" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/short1"
+        android:layout_weight="0.2" />
+
+    <ImageView
+        android:id="@+id/imgPlace"
+        android:layout_width="@dimen/medium1"
+        android:layout_height="@dimen/medium2"
+        android:layout_gravity="center"
+        android:contentDescription="@string/image_fragment_info"
+        tools:ignore="ImageContrastCheck"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/short1"
+        android:layout_weight="0.1" />
+
+    <TextView
+        android:id="@+id/txtDescriptionPlace"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:text="@string/description_fragment_info"
+        style="@style/MiParrafoStyle" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/short1"
+        android:layout_weight="0.2" />
+</LinearLayout>
