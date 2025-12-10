@@ -22,7 +22,7 @@ class UiViewModel @Inject constructor() : ViewModel() {
     /**
      * Limpia el estado del ViewModel
      **/
-    private fun cleanState() {
+    fun cleanState() {
         _uiState.value = UiModel()
     }
     /**

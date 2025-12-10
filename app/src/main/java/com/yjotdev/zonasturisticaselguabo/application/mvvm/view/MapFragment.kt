@@ -52,15 +52,35 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(posStart, 10.5f))
         // Agregar marcas de locacion
         val pos1 = LatLng(-3.2041386029873475, -79.73564629295399)
-        mMap.addMarker(MarkerOptions().position(pos1).title(getString(R.string.title_fragment_info1)))
+        mMap.addMarker(MarkerOptions().apply {
+            position(pos1)
+            title(getString(R.string.title_fragment_info1))
+            contentDescription(getString(R.string.title_fragment_info1))
+        })
         val pos2 = LatLng(-3.105959818945006, -79.90009364814615)
-        mMap.addMarker(MarkerOptions().position(pos2).title(getString(R.string.title_fragment_info2)))
+        mMap.addMarker(MarkerOptions().apply {
+            position(pos2)
+            title(getString(R.string.title_fragment_info2))
+            contentDescription(getString(R.string.title_fragment_info2))
+        })
         val pos3 = LatLng(-3.2535029218247113, -79.81199675054458)
-        mMap.addMarker(MarkerOptions().position(pos3).title(getString(R.string.title_fragment_info3)))
+        mMap.addMarker(MarkerOptions().apply {
+            position(pos3)
+            title(getString(R.string.title_fragment_info3))
+            contentDescription(getString(R.string.title_fragment_info3))
+        })
         val pos4 = LatLng(-3.178280150740988, -79.75605126084874)
-        mMap.addMarker(MarkerOptions().position(pos4).title(getString(R.string.title_fragment_info4)))
+        mMap.addMarker(MarkerOptions().apply {
+            position(pos4)
+            title(getString(R.string.title_fragment_info4))
+            contentDescription(getString(R.string.title_fragment_info4))
+        })
         val pos5 = LatLng(-3.188914657907403, -79.74282166627961)
-        mMap.addMarker(MarkerOptions().position(pos5).title(getString(R.string.title_fragment_info5)))
+        mMap.addMarker(MarkerOptions().apply {
+            position(pos5)
+            title(getString(R.string.title_fragment_info5))
+            contentDescription(getString(R.string.title_fragment_info5))
+        })
         //Evento que muestra la info del marcador seleccionado
         mMap.setOnMarkerClickListener {
             it.showInfoWindow()

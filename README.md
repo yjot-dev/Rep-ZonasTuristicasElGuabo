@@ -28,7 +28,8 @@ con su descripción.
 - Al abrir la app, se muestra un mapa en donde el usuario podra elegir 
 un destino turistico de la ciudad de El Guabo.
 - En Mapa, el usuario vera una serie de marcadores de lugares en su 
-alrededor, en la cual podra hacer click para ver su informacion.
+alrededor, en la cual podra hacer click para ver su titulo y si se
+hace otra vez click te lleva a la vista de informacion.
 - En Info, es la vista que muestra la informacion del lugar turistico 
 seleccionado luego de haber hecho click en el marcador del mapa.
 
