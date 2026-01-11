@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ATEG</string>
+    <string name="title_fragment_map">El Guabo</string>
+    <string name="title_fragment_info1">Manuel Waterfalls</string>
+    <string name="title_fragment_info2">Bajo Alto</string>
+    <string name="title_fragment_info3">The Viewpoint</string>
+    <string name="title_fragment_info4">Quinta Ines Maria</string>
+    <string name="title_fragment_info5">Road to Paradise</string>
+    <string name="image_fragment_info">Place image</string>
+    <string name="description_fragment_info">Place description</string>
+</resources>

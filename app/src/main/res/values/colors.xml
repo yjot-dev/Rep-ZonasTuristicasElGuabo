@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Color background icon -->
-    <color name="ic_launcher_background">#446732</color>
+    <color name="ic_launcher_background">#B8E8A6</color>
     <!-- Tema claro -->
     <color name="colorPrimaryLight">#B8AB91</color>
     <color name="colorPrimaryVariantLight">#FFB28F4F</color>
