@@ -34,7 +34,7 @@ hace otra vez click te lleva a la vista de informacion.
 seleccionado luego de haber hecho click en el marcador del mapa.
 
 # Ver video Demo
-No disponible aun
+[Ver en Youtube](https://youtu.be/cLXHV31xcgo)
 
 # Contribución
 - Haz un fork del repositorio
