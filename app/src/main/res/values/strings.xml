@@ -8,4 +8,8 @@
     <string name="title_fragment_info5">Camino al Paraiso</string>
     <string name="image_fragment_info">Imagen del lugar</string>
     <string name="description_fragment_info">Descripcion del lugar</string>
+    <string name="toast_permission_granted">PERMISO REQUERIDO OTORGADO</string>
+    <string name="toast_permission_denied">PERMISO REQUERIDO DENEGADO</string>
+    <string name="toast_permission_1">PERMISO DE ACCESO A UBICACIÓN PRECISA YA OTORGADO</string>
+    <string name="toast_permission_2">PERMISO DE ACCESO A UBICACIÓN APROXIMADA YA OTORGADO</string>
 </resources>

@@ -15,7 +15,7 @@ import com.yjotdev.zonasturisticaselguabo.application.mvvm.model.UiModel
 import com.yjotdev.zonasturisticaselguabo.application.mvvm.viewmodel.UiViewModel
 
 @OptIn(ExperimentalCoroutinesApi::class)
-class UiViewModelTest {
+class ViewModelTest {
 
     private lateinit var viewModel: UiViewModel
     private val testDispatcher = StandardTestDispatcher()

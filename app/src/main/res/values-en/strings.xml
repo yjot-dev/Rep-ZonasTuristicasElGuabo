@@ -8,4 +8,8 @@
     <string name="title_fragment_info5">Road to Paradise</string>
     <string name="image_fragment_info">Place image</string>
     <string name="description_fragment_info">Place description</string>
+    <string name="toast_permission_granted">PERMISSION REQUIRED GRANTED</string>
+    <string name="toast_permission_denied">PERMISSION REQUIRED DENIED</string>
+    <string name="toast_permission_1">ACCESS FINE LOCATION PERMISSION ALREADY GRANTED</string>
+    <string name="toast_permission_2">ACCESS COARSE LOCATION PERMISSION ALREADY GRANTED</string>
 </resources>
