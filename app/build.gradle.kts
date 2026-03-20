@@ -13,22 +13,31 @@ android {
         applicationId = "com.yjotdev.zonasturisticaselguabo"
         minSdk = 24
         targetSdk = 35
-        versionCode = 3
-        versionName = "3.0"
+        versionCode = 4
+        versionName = "1.4"
         testInstrumentationRunner = "com.yjotdev.zonasturisticaselguabo.CustomTestRunner"
-        manifestPlaceholders.putAll(
-            mapOf(
-                "MAPS_API_KEY" to (project.findProperty("MAPS_API_KEY") ?: "")
-            )
-        )
+    }
+    signingConfigs {
+        create("release") {
+            keyAlias = project.findProperty("APP_KEY_ALIAS") as? String
+            keyPassword = project.findProperty("APP_KEY_PASSWORD") as? String
+            storePassword = project.findProperty("APP_STORE_PASSWORD") as? String
+            storeFile = project.findProperty("APP_STORE_FILE")?.let { rootProject.file(it) }
+        }
     }
     buildTypes {
         debug {
             applicationIdSuffix = ".debug"
             isDebuggable = true
+            // Key de Google enviada al manifesto
+            val mapsApiKey = project.findProperty("MAPS_API_KEY_DEBUG") as? String
+                ?: error("La propiedad 'MAPS_API_KEY_DEBUG' no se encontró en custom.properties")
+            manifestPlaceholders.putAll(mapOf("MAPS_API_KEY" to mapsApiKey))
         }
         release {
+            signingConfig = signingConfigs.getByName("release")
             isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                     getDefaultProguardFile("proguard-android-optimize.txt"),
                     "proguard-rules.pro"
@@ -36,6 +45,10 @@ android {
             ndk {
                 debugSymbolLevel = "FULL"
             }
+            // Key de Google enviada al manifesto
+            val mapsApiKey = project.findProperty("MAPS_API_KEY_RELEASE") as? String
+                ?: error("La propiedad 'MAPS_API_KEY_RELEASE' no se encontró en custom.properties")
+            manifestPlaceholders.putAll(mapOf("MAPS_API_KEY" to mapsApiKey))
         }
     }
     compileOptions {
@@ -56,6 +69,9 @@ android {
         jniLibs {
             useLegacyPackaging = false
         }
+    }
+    lint {
+        disable += setOf("NotificationPermission")
     }
 }
 
