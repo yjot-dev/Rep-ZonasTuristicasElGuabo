@@ -1,4 +1,4 @@
-package com.yjotdev.zonasturisticaselguabo.application.navigation
+package com.yjotdev.zonasturisticaselguabo.presentation.navigation
 
 import android.Manifest
 import android.content.pm.PackageManager

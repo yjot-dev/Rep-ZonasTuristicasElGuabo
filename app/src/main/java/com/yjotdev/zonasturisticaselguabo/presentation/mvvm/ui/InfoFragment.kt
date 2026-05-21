@@ -1,4 +1,4 @@
-package com.yjotdev.zonasturisticaselguabo.application.mvvm.view
+package com.yjotdev.zonasturisticaselguabo.presentation.mvvm.ui
 
 import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
@@ -21,7 +21,7 @@ import kotlin.getValue
 import com.squareup.picasso.Picasso
 import dagger.hilt.android.AndroidEntryPoint
 import com.yjotdev.zonasturisticaselguabo.databinding.FragmentInfoBinding
-import com.yjotdev.zonasturisticaselguabo.application.mvvm.viewmodel.UiViewModel
+import com.yjotdev.zonasturisticaselguabo.presentation.mvvm.viewmodel.UiViewModel
 
 @AndroidEntryPoint
 class InfoFragment : Fragment() {

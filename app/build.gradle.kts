@@ -7,12 +7,12 @@ plugins {
 
 android {
     namespace = "com.yjotdev.zonasturisticaselguabo"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.yjotdev.zonasturisticaselguabo"
         minSdk = 24
-        targetSdk = 35
+        targetSdk = 36
         versionCode = 4
         versionName = "1.4"
         testInstrumentationRunner = "com.yjotdev.zonasturisticaselguabo.CustomTestRunner"
@@ -52,11 +52,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
     }
     kotlinOptions {
-        jvmTarget = "17"
+        jvmTarget = "21"
     }
     buildFeatures {
         viewBinding = true

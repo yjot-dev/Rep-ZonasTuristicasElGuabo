@@ -1,4 +1,4 @@
-package com.yjotdev.zonasturisticaselguabo.application.mvvm.view
+package com.yjotdev.zonasturisticaselguabo.presentation.mvvm.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -20,7 +20,7 @@ import androidx.navigation.ui.setupWithNavController
 import dagger.hilt.android.AndroidEntryPoint
 import com.yjotdev.zonasturisticaselguabo.R
 import com.yjotdev.zonasturisticaselguabo.databinding.FragmentMapBinding
-import com.yjotdev.zonasturisticaselguabo.application.mvvm.viewmodel.UiViewModel
+import com.yjotdev.zonasturisticaselguabo.presentation.mvvm.viewmodel.UiViewModel
 
 @AndroidEntryPoint
 class MapFragment : Fragment(), OnMapReadyCallback {

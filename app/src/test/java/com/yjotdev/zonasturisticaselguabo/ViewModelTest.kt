@@ -11,8 +11,8 @@ import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotEquals
 import org.junit.Before
 import org.junit.Test
-import com.yjotdev.zonasturisticaselguabo.application.mvvm.model.UiModel
-import com.yjotdev.zonasturisticaselguabo.application.mvvm.viewmodel.UiViewModel
+import com.yjotdev.zonasturisticaselguabo.presentation.mvvm.state.UiState
+import com.yjotdev.zonasturisticaselguabo.presentation.mvvm.viewmodel.UiViewModel
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class ViewModelTest {
@@ -38,7 +38,7 @@ class ViewModelTest {
      */
     @Test
     fun uiStateIsInitializedWithDefaultValues() = runTest {
-        val expectedState = UiModel() // Asumiendo que el constructor vacío tiene valores por defecto
+        val expectedState = UiState() // Asumiendo que el constructor vacío tiene valores por defecto
         val currentState = viewModel.uiState.value
 
         assertEquals("El estado inicial debería ser el por defecto", expectedState, currentState)

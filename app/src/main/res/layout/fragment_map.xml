@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".application.mvvm.view.MapFragment">
+    tools:context=".presentation.mvvm.ui.MapFragment">
     <include
         android:id="@+id/includeToolbar"
         layout="@layout/toolbar" />

@@ -8,7 +8,7 @@ import android.os.Build
 import android.view.WindowManager
 import androidx.activity.SystemBarStyle
 import androidx.activity.enableEdgeToEdge
-import com.yjotdev.zonasturisticaselguabo.application.navigation.setupAppPermissions
+import com.yjotdev.zonasturisticaselguabo.presentation.navigation.setupAppPermissions
 import com.yjotdev.zonasturisticaselguabo.databinding.ActivityMainBinding
 
 @AndroidEntryPoint
