@@ -13,8 +13,8 @@ android {
         applicationId = "com.yjotdev.zonasturisticaselguabo"
         minSdk = 24
         targetSdk = 36
-        versionCode = 4
-        versionName = "1.4"
+        versionCode = 5
+        versionName = "1.5"
         testInstrumentationRunner = "com.yjotdev.zonasturisticaselguabo.CustomTestRunner"
     }
     signingConfigs {
