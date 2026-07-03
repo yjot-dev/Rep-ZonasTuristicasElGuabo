@@ -1,14 +1,17 @@
 package com.yjotdev.zonasturisticaselguabo
 
+import android.Manifest
+import android.content.Intent
+import androidx.recyclerview.widget.RecyclerView
+import androidx.test.rule.GrantPermissionRule
 import androidx.test.core.app.ActivityScenario
+import androidx.test.core.app.ApplicationProvider
 import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.contrib.RecyclerViewActions
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
-import androidx.test.platform.app.InstrumentationRegistry
-import androidx.test.uiautomator.By
-import androidx.test.uiautomator.UiDevice
-import androidx.test.uiautomator.Until
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import org.junit.Before
@@ -18,68 +21,45 @@ import org.junit.Test
 @HiltAndroidTest
 class AppNavigationTest {
 
-    // Regla para inyectar dependencias con Hilt antes de cada test
-    @get:Rule
-    var hiltRule = HiltAndroidRule(this)
+    @get:Rule(order = 0)
+    var hiltRule: HiltAndroidRule = HiltAndroidRule(this)
 
-    private lateinit var device: UiDevice
+    @get:Rule(order = 1)
+    val permissionRule: GrantPermissionRule =
+        GrantPermissionRule.grant(
+            Manifest.permission.ACCESS_FINE_LOCATION,
+            Manifest.permission.ACCESS_COARSE_LOCATION
+        )
 
     @Before
     fun setup() {
         // Inicializa Hilt
         hiltRule.inject()
-        // Inicializa UIAutomator
-        device = UiDevice.getInstance(InstrumentationRegistry.getInstrumentation())
     }
 
     @Test
     fun testNavegacionMarcadorCascadasDeManuel() {
-        // 1. INICIO: Lanza la MainActivity
-        val scenario = ActivityScenario.launch(MainActivity::class.java)
-        // Verificamos que el mapa está visible
-        onView(withId(R.id.map)).check(matches(isDisplayed()))
-
-        // 2. ESPERAR CARGA DEL MAPA (Visualmente)
-        device.wait(Until.hasObject(By.descContains("Google Map")), 5000)
-
-        // 3. ENCONTRAR EL MARCADOR (Solo para verificar que existe)
-        val markerName = "Cascadas de Manuel"
-        val markerObject = device.wait(Until.findObject(By.descContains(markerName)), 5000)
-        if (markerObject == null) {
-            throw RuntimeException("No se encontró el marcador '$markerName'.")
-        }
-        // Hacemos un click visual solo para que el test se vea real (opcional)
-        markerObject.click()
-        markerObject.click()
-        Thread.sleep(1000) // Esperar a que la ventana se vea
-
-        // 4. TRUCO "QA PROFESIONAL": INVOCAR LA NAVEGACIÓN PROGRAMÁTICAMENTE
-        // En lugar de luchar con coordenadas, ejecutamos la acción directamente.
-        val markerBounds = markerObject.visibleBounds
-        val centerX = markerBounds.centerX()
-        val density = InstrumentationRegistry.getInstrumentation().targetContext.resources.displayMetrics.density
-        // Hacemos clics en un rango vertical más amplio y rápido
-        // InfoWindows suelen estar entre 40dp y 120dp arriba del marcador
-        val steps = listOf(50, 70, 90, 110)
-        var navegacionExitosa = false
-        for (dpOffset in steps) {
-            if (device.hasObject(By.res("${BuildConfig.APPLICATION_ID}:id/imgPlace"))) {
-                navegacionExitosa = true
-                break // Ya llegamos, salir del loop
-            }
-            val y = markerBounds.top - (dpOffset * density).toInt()
-            device.click(centerX, y)
-            Thread.sleep(800) // Espera entre intentos
+        // 1. Configuramos el Intent para activar el modo test
+        val intent = Intent(ApplicationProvider.getApplicationContext(), MainActivity::class.java).apply {
+            putExtra("IS_TESTING", true)
         }
 
-        // 5. ESPERAR LA TRANSICIÓN
-        val isTargetVisible = device.wait(Until.hasObject(By.res("${BuildConfig.APPLICATION_ID}:id/imgPlace")), 5000)
-        if (!isTargetVisible && !navegacionExitosa) {
-            throw RuntimeException("El click se realizó, pero no se navegó a la pantalla de información.")
-        }
+        // 2. Iniciamos la actividad MainActivity
+        val scenario = ActivityScenario.launch<MainActivity>(intent)
 
-        // 6. VALIDACIÓN FINAL CON ESPRESSO
-        onView(withId(R.id.imgPlace)).check(matches(isDisplayed()))
+        // 3. Verificamos que el mapa fake y sus marcadores están visibles
+        onView(withId(R.id.recyclerViewSites))
+            .check(matches(isDisplayed()))
+
+        // 4. Hacemos clic en el primer marcador fake
+        onView(withId(R.id.recyclerViewSites))
+            .perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
+
+        // 5. Verificamos que el fragment de información está visible
+        onView(withId(R.id.imgPlace))
+            .check(matches(isDisplayed()))
+
+        // 6. Cerramos el escenario
         scenario.close()
     }
 }

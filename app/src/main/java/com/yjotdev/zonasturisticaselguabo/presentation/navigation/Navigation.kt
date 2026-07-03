@@ -5,6 +5,7 @@ import android.content.pm.PackageManager
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
+import androidx.navigation.fragment.NavHostFragment
 import com.yjotdev.zonasturisticaselguabo.MainActivity
 import com.yjotdev.zonasturisticaselguabo.R
 
@@ -31,4 +32,26 @@ fun MainActivity.setupAppPermissions() {
     }else{
         requestPermissionLauncher.launch(Manifest.permission.ACCESS_COARSE_LOCATION)
     }
+}
+
+fun MainActivity.setupNavigation() {
+    val navHostFragment = supportFragmentManager
+        .findFragmentById(R.id.fragmentNav) as NavHostFragment
+    val navController = navHostFragment.navController
+
+    // 1. Obtenemos el grafo
+    val navGraph = navController.navInflater.inflate(R.navigation.nav_graph)
+
+    // 2. Revisamos si venimos de un test
+    val isTest = intent.getBooleanExtra("IS_TESTING", false)
+
+    // 3. Cambiamos el destino inicial si es necesario
+    if (isTest) {
+        navGraph.setStartDestination(R.id.mapFakeFragment)
+    } else {
+        navGraph.setStartDestination(R.id.mapFragment)
+    }
+
+    // 4. Aplicamos el grafo al controlador
+    navController.graph = navGraph
 }

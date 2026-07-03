@@ -10,6 +10,7 @@ import androidx.activity.SystemBarStyle
 import androidx.activity.enableEdgeToEdge
 import com.yjotdev.zonasturisticaselguabo.presentation.navigation.setupAppPermissions
 import com.yjotdev.zonasturisticaselguabo.databinding.ActivityMainBinding
+import com.yjotdev.zonasturisticaselguabo.presentation.navigation.setupNavigation
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -25,6 +26,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         // Solicita permisos necesarios
         setupAppPermissions()
+        // Configura la navegación
+        setupNavigation()
     }
 
     private fun viewEdgeToEdge(){

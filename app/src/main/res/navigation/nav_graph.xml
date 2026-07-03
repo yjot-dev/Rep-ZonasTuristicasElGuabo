@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/mapFragment"
-        android:name="com.yjotdev.zonasturisticaselguabo.presentation.mvvm.ui.MapFragment"
+        android:name="com.yjotdev.zonasturisticaselguabo.presentation.mvvm.ui.fragment.MapFragment"
         android:label="@string/title_fragment_map"
         tools:layout="@layout/fragment_map">
         <action
@@ -17,8 +17,18 @@
     </fragment>
 
     <fragment
+        android:id="@+id/mapFakeFragment"
+        android:name="com.yjotdev.zonasturisticaselguabo.presentation.mvvm.ui.fragment.MapFakeFragment"
+        android:label="@string/title_fragment_map"
+        tools:layout="@layout/fragment_map_fake">
+        <action
+            android:id="@+id/action_map_fake_to_info"
+            app:destination="@id/infoFragment" />
+    </fragment>
+
+    <fragment
         android:id="@+id/infoFragment"
-        android:name="com.yjotdev.zonasturisticaselguabo.presentation.mvvm.ui.InfoFragment"
+        android:name="com.yjotdev.zonasturisticaselguabo.presentation.mvvm.ui.fragment.InfoFragment"
         tools:layout="@layout/fragment_info">
     </fragment>
 

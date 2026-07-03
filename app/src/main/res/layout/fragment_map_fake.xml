@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".presentation.mvvm.ui.fragment.MapFragment">
+    tools:context=".presentation.mvvm.ui.fragment.MapFakeFragment">
     <include
         android:id="@+id/includeToolbar"
         layout="@layout/toolbar" />
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/map"
-        android:name="com.google.android.gms.maps.SupportMapFragment"
+    <!-- Lista de sitios turísticos -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewSites"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout="@layout/support_simple_spinner_dropdown_item" />
-</RelativeLayout>
+        android:padding="16dp"
+        android:clipToPadding="false"/>
+</LinearLayout>

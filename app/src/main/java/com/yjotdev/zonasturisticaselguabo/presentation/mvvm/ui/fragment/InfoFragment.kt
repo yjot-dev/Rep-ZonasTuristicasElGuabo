@@ -1,4 +1,4 @@
-package com.yjotdev.zonasturisticaselguabo.presentation.mvvm.ui
+package com.yjotdev.zonasturisticaselguabo.presentation.mvvm.ui.fragment
 
 import android.os.Bundle
 import android.text.method.ScrollingMovementMethod

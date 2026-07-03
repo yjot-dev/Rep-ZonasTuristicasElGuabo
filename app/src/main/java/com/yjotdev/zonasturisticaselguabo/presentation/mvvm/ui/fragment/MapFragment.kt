@@ -1,4 +1,4 @@
-package com.yjotdev.zonasturisticaselguabo.presentation.mvvm.ui
+package com.yjotdev.zonasturisticaselguabo.presentation.mvvm.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -18,9 +18,10 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import dagger.hilt.android.AndroidEntryPoint
-import com.yjotdev.zonasturisticaselguabo.R
 import com.yjotdev.zonasturisticaselguabo.databinding.FragmentMapBinding
 import com.yjotdev.zonasturisticaselguabo.presentation.mvvm.viewmodel.UiViewModel
+import com.yjotdev.zonasturisticaselguabo.presentation.utils.Provider
+import com.yjotdev.zonasturisticaselguabo.R
 
 @AndroidEntryPoint
 class MapFragment : Fragment(), OnMapReadyCallback {
@@ -90,29 +91,29 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         mMap.setOnInfoWindowClickListener {
             when(it.position){
                 pos1 -> {
-                    viewModel.setTitle(getString(R.string.title_fragment_info1))
+                    viewModel.setTitle(getString(Provider.sites[0].titleId))
                     viewModel.setImageUrl("https://lh5.googleusercontent.com/p/AF1QipNAQ69mtMhPMI_GGNMvnntmWWsHGBtl52UFdSn6=w426-h240-k-no")
-                    viewModel.setDescription("Cascadas de Manuel ofrece un amplio espacio de distracción en medio de la naturaleza en donde se puede disfrutar en familia y amigos.")
+                    viewModel.setDescription(getString(Provider.sites[0].descriptionId))
                 }
                 pos2 -> {
-                    viewModel.setTitle(getString(R.string.title_fragment_info2))
+                    viewModel.setTitle(getString(Provider.sites[1].titleId))
                     viewModel.setImageUrl("https://lh5.googleusercontent.com/p/AF1QipODLcEKlak0WRjM4hGCW7oBqhzhf5O5Yck18mHc=w426-h240-k-no")
-                    viewModel.setDescription("La playa es lugar muy concurrido actualmente, por lo que tiene ciertas virtudes como la facilidad de acceso a comida a precios accesibles y de calidad, la variedad de actividades que se pueden desarrollar en el mar y la confianza de un lugar seguro.")
+                    viewModel.setDescription(getString(Provider.sites[1].descriptionId))
                 }
                 pos3 -> {
-                    viewModel.setTitle(getString(R.string.title_fragment_info3))
+                    viewModel.setTitle(getString(Provider.sites[2].titleId))
                     viewModel.setImageUrl("https://lh5.googleusercontent.com/p/AF1QipNE9CMLM10AGRf6GfJa6xI1D5km3QK-KOgupmcP=w408-h306-k-no")
-                    viewModel.setDescription("Buenos paisajes, tiene 2 piscinas, una para adultos y otra para niños con tobogan, cerca hay una pista de moto cross.")
+                    viewModel.setDescription(getString(Provider.sites[2].descriptionId))
                 }
                 pos4 -> {
-                    viewModel.setTitle(getString(R.string.title_fragment_info4))
+                    viewModel.setTitle(getString(Provider.sites[3].titleId))
                     viewModel.setImageUrl("https://lh5.googleusercontent.com/p/AF1QipM4H0LTypOklEtzN1SeqJdtP5mRvXNrciVRISkM=w494-h240-k-no")
-                    viewModel.setDescription("Es muy bonito tiene cascadas y el agua es natural, ademas es un lugar para tu descanso, contamos con cabañas, piscina, río, restaurant, senderos ecológicos y más.")
+                    viewModel.setDescription(getString(Provider.sites[3].descriptionId))
                 }
                 pos5 -> {
-                    viewModel.setTitle(getString(R.string.title_fragment_info5))
+                    viewModel.setTitle(getString(Provider.sites[4].titleId))
                     viewModel.setImageUrl("https://lh5.googleusercontent.com/p/AF1QipN09ponHM_DgECvkVhbM38edCgLUF-cgFzgqQnj=w408-h306-k-no")
-                    viewModel.setDescription("Única piscina de agua 100% natural libre de químicos, proveniente de la vertiente de la montaña.")
+                    viewModel.setDescription(getString(Provider.sites[4].descriptionId))
                 }
             }
             findNavController().navigate(R.id.action_map_to_info)

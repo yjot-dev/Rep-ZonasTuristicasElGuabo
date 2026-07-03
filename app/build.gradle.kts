@@ -100,8 +100,9 @@ dependencies {
     testImplementation(libs.jetbrains.kotlinx.coroutines.test)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(libs.androidx.espresso.contrib)
+    androidTestImplementation(libs.androidx.rules)
     androidTestImplementation(libs.dagger.hilt.android.testing)
     androidTestImplementation(libs.androidx.navigation.testing)
-    androidTestImplementation(libs.androidx.test.uiautomator)
     kspAndroidTest(libs.dagger.hilt.android.compiler)
 }
