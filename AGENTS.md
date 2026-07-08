@@ -10,14 +10,14 @@
 El proyecto utiliza las siguientes tecnologías y patrones:
 - **Lenguaje:** Kotlin
 - **UI:** XML con Material 3
-- **Arquitectura:** MVVM Simple
+- **Arquitectura:** MVVM
 - **Navegación:** Navigation Component
 - **Gestión de Estado:** ViewModel + StateFlow
 - **Inyección de Dependencias:** Hilt
 - **Persistencia/Red:** Google Maps API
 - **Compatibilidad:** Android 7.0 (API 24) en adelante
 
-## 3. ESTRUCTURA DEL PROYECTO (MVVM Simple)
+## 3. ESTRUCTURA DEL PROYECTO (MVVM)
 Se debe seguir estrictamente la siguiente organización de directorios dentro de la capa de presentación:
 
 - **`presentation`** (Capa de Presentación)
@@ -28,6 +28,7 @@ Se debe seguir estrictamente la siguiente organización de directorios dentro de
         - `viewmodel`: Lógica de UI (`UiViewModel.kt`).
         - `state`: Modelos de datos de UI (`UiState.kt`).
     - `navigation`: Grafos (`Navigation.kt`) y eventos (`UiEvent.kt`).
+    - `utils`: Clases auxiliares de UI (`Provider.kt`) y (`Site.kt`)
 
 ## 4. CONVENCIONES Y ESTILO
 ### 4.1 Código y Nomenclatura
@@ -44,7 +45,6 @@ Se debe seguir estrictamente la siguiente organización de directorios dentro de
 ## 5. RESTRICCIONES CRÍTICAS (PROHIBICIONES)
 - **Dependencias:** No añadir ni actualizar dependencias en `build.gradle` o `libs.versions.toml` sin avisar previamente.
 - **Seguridad:** **NUNCA** incluir ni subir al repositorio remoto los siguientes archivos:
-    - `.gitignore`
     - `local.properties`
     - `custom.properties`
 
