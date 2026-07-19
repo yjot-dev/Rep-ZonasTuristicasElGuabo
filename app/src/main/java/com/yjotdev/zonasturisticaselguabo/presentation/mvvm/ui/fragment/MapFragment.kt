@@ -48,39 +48,34 @@ class MapFragment : Fragment(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
-        // Posicion inicial de camara
+        // Posición inicial de cámara
         val posStart = LatLng(-3.2099019884381983, -79.81512207539423)
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(posStart, 10.5f))
-        // Agregar marcas de locacion
-        val pos1 = LatLng(-3.2041386029873475, -79.73564629295399)
+        // Agregar marcas de locación
         mMap.addMarker(MarkerOptions().apply {
-            position(pos1)
-            title(getString(R.string.title_fragment_info1))
-            contentDescription(getString(R.string.title_fragment_info1))
+            position(Provider.sites[0].position)
+            title(getString(Provider.sites[0].titleId))
+            contentDescription(getString(Provider.sites[0].descriptionId))
         })
-        val pos2 = LatLng(-3.105959818945006, -79.90009364814615)
         mMap.addMarker(MarkerOptions().apply {
-            position(pos2)
-            title(getString(R.string.title_fragment_info2))
-            contentDescription(getString(R.string.title_fragment_info2))
+            position(Provider.sites[1].position)
+            title(getString(Provider.sites[1].titleId))
+            contentDescription(getString(Provider.sites[1].descriptionId))
         })
-        val pos3 = LatLng(-3.2535029218247113, -79.81199675054458)
         mMap.addMarker(MarkerOptions().apply {
-            position(pos3)
-            title(getString(R.string.title_fragment_info3))
-            contentDescription(getString(R.string.title_fragment_info3))
+            position(Provider.sites[2].position)
+            title(getString(Provider.sites[2].titleId))
+            contentDescription(getString(Provider.sites[2].descriptionId))
         })
-        val pos4 = LatLng(-3.178280150740988, -79.75605126084874)
         mMap.addMarker(MarkerOptions().apply {
-            position(pos4)
-            title(getString(R.string.title_fragment_info4))
-            contentDescription(getString(R.string.title_fragment_info4))
+            position(Provider.sites[3].position)
+            title(getString(Provider.sites[3].titleId))
+            contentDescription(getString(Provider.sites[3].descriptionId))
         })
-        val pos5 = LatLng(-3.188914657907403, -79.74282166627961)
         mMap.addMarker(MarkerOptions().apply {
-            position(pos5)
-            title(getString(R.string.title_fragment_info5))
-            contentDescription(getString(R.string.title_fragment_info5))
+            position(Provider.sites[4].position)
+            title(getString(Provider.sites[4].titleId))
+            contentDescription(getString(Provider.sites[4].descriptionId))
         })
         //Evento que muestra la info del marcador seleccionado
         mMap.setOnMarkerClickListener {
@@ -90,29 +85,29 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         //Evento que muestra un fragment de la info seleccionada
         mMap.setOnInfoWindowClickListener {
             when(it.position){
-                pos1 -> {
+                Provider.sites[0].position -> {
                     viewModel.setTitle(getString(Provider.sites[0].titleId))
-                    viewModel.setImageUrl("https://lh5.googleusercontent.com/p/AF1QipNAQ69mtMhPMI_GGNMvnntmWWsHGBtl52UFdSn6=w426-h240-k-no")
+                    viewModel.setImageUrl(Provider.sites[0].imageUrl)
                     viewModel.setDescription(getString(Provider.sites[0].descriptionId))
                 }
-                pos2 -> {
+                Provider.sites[1].position -> {
                     viewModel.setTitle(getString(Provider.sites[1].titleId))
-                    viewModel.setImageUrl("https://lh5.googleusercontent.com/p/AF1QipODLcEKlak0WRjM4hGCW7oBqhzhf5O5Yck18mHc=w426-h240-k-no")
+                    viewModel.setImageUrl(Provider.sites[1].imageUrl)
                     viewModel.setDescription(getString(Provider.sites[1].descriptionId))
                 }
-                pos3 -> {
+                Provider.sites[2].position -> {
                     viewModel.setTitle(getString(Provider.sites[2].titleId))
-                    viewModel.setImageUrl("https://lh5.googleusercontent.com/p/AF1QipNE9CMLM10AGRf6GfJa6xI1D5km3QK-KOgupmcP=w408-h306-k-no")
+                    viewModel.setImageUrl(Provider.sites[2].imageUrl)
                     viewModel.setDescription(getString(Provider.sites[2].descriptionId))
                 }
-                pos4 -> {
+                Provider.sites[3].position -> {
                     viewModel.setTitle(getString(Provider.sites[3].titleId))
-                    viewModel.setImageUrl("https://lh5.googleusercontent.com/p/AF1QipM4H0LTypOklEtzN1SeqJdtP5mRvXNrciVRISkM=w494-h240-k-no")
+                    viewModel.setImageUrl(Provider.sites[3].imageUrl)
                     viewModel.setDescription(getString(Provider.sites[3].descriptionId))
                 }
-                pos5 -> {
+                Provider.sites[4].position -> {
                     viewModel.setTitle(getString(Provider.sites[4].titleId))
-                    viewModel.setImageUrl("https://lh5.googleusercontent.com/p/AF1QipN09ponHM_DgECvkVhbM38edCgLUF-cgFzgqQnj=w408-h306-k-no")
+                    viewModel.setImageUrl(Provider.sites[4].imageUrl)
                     viewModel.setDescription(getString(Provider.sites[4].descriptionId))
                 }
             }

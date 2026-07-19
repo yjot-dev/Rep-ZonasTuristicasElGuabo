@@ -1,5 +1,8 @@
 <resources>
-    <string name="app_name">ATEG</string>
+    <string name="app_name">ZTEG</string>
+    <string name="title_fragment_start">Tourist Areas \nEl Guabo</string>
+    <string name="txt_fragment_start">Start</string>
+    <string name="button_fragment_start">Continue</string>
     <string name="title_fragment_map">El Guabo</string>
     <string name="title_fragment_info1">Manuel Waterfalls</string>
     <string name="title_fragment_info2">Bajo Alto</string>
@@ -12,7 +15,6 @@
     <string name="description_fragment_info4">A beautiful place with natural waterfalls, perfect for relaxation. We offer cabins, a pool, a river, a restaurant, ecological forests, and more.</string>
     <string name="description_fragment_info5">The only 100% natural water pool, chemical-free, sourced directly from a mountain spring.</string>
     <string name="image_fragment_info">Place image</string>
-    <string name="description_fragment_info">Place description</string>
     <string name="toast_permission_granted">PERMISSION REQUIRED GRANTED</string>
     <string name="toast_permission_denied">PERMISSION REQUIRED DENIED</string>
     <string name="toast_permission_1">ACCESS FINE LOCATION PERMISSION ALREADY GRANTED</string>

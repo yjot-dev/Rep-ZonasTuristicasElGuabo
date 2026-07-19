@@ -4,7 +4,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/mapFragment">
+    app:startDestination="@id/startFragment">
+
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.yjotdev.zonasturisticaselguabo.presentation.mvvm.ui.fragment.StartFragment"
+        android:label="@string/txt_fragment_start"
+        tools:layout="@layout/fragment_start">
+        <action
+            android:id="@+id/action_start_to_map"
+            app:destination="@id/mapFragment" />
+        <action
+            android:id="@+id/action_start_to_map_fake"
+            app:destination="@id/mapFakeFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/mapFragment"

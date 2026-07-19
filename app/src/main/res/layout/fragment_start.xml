@@ -2,10 +2,11 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".presentation.mvvm.ui.fragment.InfoFragment">
+    tools:context=".presentation.mvvm.ui.fragment.StartFragment">
     <include
         android:id="@+id/includeToolbar"
         layout="@layout/toolbar" />
@@ -15,26 +16,36 @@
         android:layout_height="@dimen/short1"
         android:layout_weight="1" />
 
-    <ImageView
-        android:id="@+id/imgPlace"
-        android:layout_width="@dimen/medium2"
-        android:layout_height="@dimen/medium2"
-        android:layout_gravity="center"
-        android:contentDescription="@string/image_fragment_info"
-        tools:ignore="ImageContrastCheck"
-        tools:srcCompat="@tools:sample/avatars" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_fragment_start"
+        style="@style/MiTituloStyle" />
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="@dimen/short1"
-        android:layout_weight="0.25" />
+        android:layout_weight="1" />
 
-    <TextView
-        android:id="@+id/txtDescriptionPlace"
+    <ImageView
         android:layout_width="@dimen/medium2"
-        android:layout_height="@dimen/medium1"
-        tools:text="Descripción del lugar"
-        style="@style/MiParrafoStyle" />
+        android:layout_height="@dimen/medium2"
+        android:layout_gravity="center"
+        android:contentDescription="@string/title_fragment_start"
+        android:src="@drawable/ubication_150"
+        app:tint="?attr/colorPrimary" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/short1"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/short3"
+        android:text="@string/button_fragment_start"
+        style="@style/MiBotonStyle" />
 
     <Space
         android:layout_width="match_parent"

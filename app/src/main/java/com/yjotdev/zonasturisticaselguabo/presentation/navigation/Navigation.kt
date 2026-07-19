@@ -38,20 +38,8 @@ fun MainActivity.setupNavigation() {
     val navHostFragment = supportFragmentManager
         .findFragmentById(R.id.fragmentNav) as NavHostFragment
     val navController = navHostFragment.navController
-
     // 1. Obtenemos el grafo
     val navGraph = navController.navInflater.inflate(R.navigation.nav_graph)
-
-    // 2. Revisamos si venimos de un test
-    val isTest = intent.getBooleanExtra("IS_TESTING", false)
-
-    // 3. Cambiamos el destino inicial si es necesario
-    if (isTest) {
-        navGraph.setStartDestination(R.id.mapFakeFragment)
-    } else {
-        navGraph.setStartDestination(R.id.mapFragment)
-    }
-
-    // 4. Aplicamos el grafo al controlador
+    // 2. Aplicamos el grafo al controlador
     navController.graph = navGraph
 }

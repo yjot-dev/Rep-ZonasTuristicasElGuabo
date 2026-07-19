@@ -1,5 +1,8 @@
 <resources>
-    <string name="app_name">ATEG</string>
+    <string name="app_name">ZTEG</string>
+    <string name="title_fragment_start">Zonas Turísticas \nEl Guabo</string>
+    <string name="txt_fragment_start">Inicio</string>
+    <string name="button_fragment_start">Continuar</string>
     <string name="title_fragment_map">El Guabo</string>
     <string name="title_fragment_info1">Cascadas de Manuel</string>
     <string name="title_fragment_info2">Bajo Alto</string>
@@ -12,7 +15,6 @@
     <string name="description_fragment_info4">Es muy bonito tiene cascadas y el agua es natural, además es un lugar para tu descanso, contamos con cabañas, piscina, río, restaurante, bosque ecológicos y más.</string>
     <string name="description_fragment_info5">Única piscina de agua 100% natural libre de químicos, proveniente de la vertiente de la montaña.</string>
     <string name="image_fragment_info">Imagen del lugar</string>
-    <string name="description_fragment_info">Descripcion del lugar</string>
     <string name="toast_permission_granted">PERMISO REQUERIDO OTORGADO</string>
     <string name="toast_permission_denied">PERMISO REQUERIDO DENEGADO</string>
     <string name="toast_permission_1">PERMISO DE ACCESO A UBICACIÓN PRECISA YA OTORGADO</string>

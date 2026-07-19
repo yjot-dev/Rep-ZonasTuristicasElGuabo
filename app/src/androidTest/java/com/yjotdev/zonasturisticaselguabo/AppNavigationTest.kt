@@ -47,19 +47,27 @@ class AppNavigationTest {
         // 2. Iniciamos la actividad MainActivity
         val scenario = ActivityScenario.launch<MainActivity>(intent)
 
-        // 3. Verificamos que el mapa fake y sus marcadores están visibles
+        // 3. Verificamos que el fragment de inicio está visible
+        onView(withId(R.id.btnStart))
+            .check(matches(isDisplayed()))
+
+        // 4. Hacemos clic en el botón de inicio
+        onView(withId(R.id.btnStart))
+            .perform(click())
+
+        // 5. Verificamos que el mapa fake y sus marcadores están visibles
         onView(withId(R.id.recyclerViewSites))
             .check(matches(isDisplayed()))
 
-        // 4. Hacemos clic en el primer marcador fake
+        // 6. Hacemos clic en el primer marcador fake
         onView(withId(R.id.recyclerViewSites))
             .perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
 
-        // 5. Verificamos que el fragment de información está visible
+        // 7. Verificamos que el fragment de información está visible
         onView(withId(R.id.imgPlace))
             .check(matches(isDisplayed()))
 
-        // 6. Cerramos el escenario
+        // 8. Cerramos el escenario
         scenario.close()
     }
 }
