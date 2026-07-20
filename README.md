@@ -1,5 +1,5 @@
-# App Turismo El Guabo (ATEG)
-ATEG es una aplicación móvil diseñada para explorar los principales centros turísticos de la ciudad de El Guabo, Ecuador. El objetivo principal es ofrecer a los usuarios una herramienta intuitiva y directa para descubrir y obtener información sobre los puntos de interés locales, utilizando la API de Google Maps como base para una experiencia de navegación interactiva.
+# Zonas Turísticas El Guabo (ZTEG)
+ZTEG es una aplicación móvil diseñada para explorar los principales centros turísticos de la ciudad de El Guabo, Ecuador. El objetivo principal es ofrecer a los usuarios una herramienta intuitiva y directa para descubrir y obtener información sobre los puntos de interés locales, utilizando la API de Google Maps como base para una experiencia de navegación interactiva.
 
 # Características principales
 - 🪟 Interfaz clasica con XML
@@ -27,10 +27,10 @@ El flujo de uso de la aplicación está diseñado para ser sencillo y eficiente,
 2. Identificación y Selección del Destino: El usuario puede interactuar libremente con el mapa. Al hacer un solo clic sobre cualquiera de los marcadores, se muestra el nombre del lugar turístico, permitiendo una rápida identificación sin salir de la vista principal.
 3. Acceso a la Información Detallada: Si un lugar capta el interés del usuario, un segundo clic sobre el mismo marcador lo redirige a una nueva pantalla. Esta vista de "Información" está dedicada exclusivamente a proporcionar detalles sobre el sitio seleccionado, como su descripción, historia y otros datos relevantes, acompañados de imágenes representativas.
 
-En resumen, ATEG centraliza la información turística de El Guabo en una plataforma móvil fácil de usar. La aplicación optimiza la experiencia del visitante al permitirle descubrir, identificar y aprender sobre los atractivos de la ciudad de manera fluida, combinando la potencia de la geolocalización con una interfaz de usuario limpia y funcional.
+En resumen, ZTEG centraliza la información turística de El Guabo en una plataforma móvil fácil de usar. La aplicación optimiza la experiencia del visitante al permitirle descubrir, identificar y aprender sobre los atractivos de la ciudad de manera fluida, combinando la potencia de la geolocalización con una interfaz de usuario limpia y funcional.
 
 # Ver video Demo
-[Ver en Youtube](https://youtu.be/cLXHV31xcgo)
+[Ver en Youtube](https://youtu.be/j8NLcXpDnHI)
 
 # Contribución
 - Haz un fork del repositorio

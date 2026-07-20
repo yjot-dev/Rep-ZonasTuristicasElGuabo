@@ -6,10 +6,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".presentation.mvvm.ui.fragment.MapFakeFragment">
-    <include
-        android:id="@+id/includeToolbar"
-        layout="@layout/toolbar" />
-
     <!-- Lista de sitios turísticos -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewSites"

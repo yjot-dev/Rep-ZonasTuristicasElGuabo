@@ -6,10 +6,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".presentation.mvvm.ui.fragment.MapFragment">
-    <include
-        android:id="@+id/includeToolbar"
-        layout="@layout/toolbar" />
-
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"

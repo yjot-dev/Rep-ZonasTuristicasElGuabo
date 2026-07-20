@@ -13,10 +13,6 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupWithNavController
 import dagger.hilt.android.AndroidEntryPoint
 import com.yjotdev.zonasturisticaselguabo.databinding.FragmentMapBinding
 import com.yjotdev.zonasturisticaselguabo.presentation.mvvm.viewmodel.UiViewModel
@@ -40,7 +36,6 @@ class MapFragment : Fragment(), OnMapReadyCallback {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setToolbar()
         // Busca el fragment del mapa y obtiene su instancia
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as? SupportMapFragment
         mapFragment?.getMapAsync(this)
@@ -112,19 +107,6 @@ class MapFragment : Fragment(), OnMapReadyCallback {
                 }
             }
             findNavController().navigate(R.id.action_map_to_info)
-        }
-    }
-
-    private fun setToolbar(){
-        val toolbar = binding.includeToolbar.toolbar
-        val navController = findNavController()
-        val appBarConfiguration = AppBarConfiguration(navController.graph)
-        toolbar.setupWithNavController(navController, appBarConfiguration)
-        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            // Solo padding arriba para que baje y no choque con la hora
-            v.setPadding(0, systemBars.top, 0, 0)
-            insets
         }
     }
 }
