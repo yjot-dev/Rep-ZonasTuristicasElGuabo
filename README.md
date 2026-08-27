@@ -30,7 +30,7 @@ El flujo de uso de la aplicación está diseñado para ser sencillo y eficiente,
 En resumen, ZTEG centraliza la información turística de El Guabo en una plataforma móvil fácil de usar. La aplicación optimiza la experiencia del visitante al permitirle descubrir, identificar y aprender sobre los atractivos de la ciudad de manera fluida, combinando la potencia de la geolocalización con una interfaz de usuario limpia y funcional.
 
 # Ver video Demo
-[Ver en Youtube](https://youtu.be/j8NLcXpDnHI)
+[Ver en Youtube](https://youtu.be/PMSeZMcdUGI)
 
 # Contribución
 - Haz un fork del repositorio
