@@ -85,6 +85,7 @@ dependencies {
     implementation(libs.androidx.fragment.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
+    implementation(libs.androidx.activity)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
     //Maps
@@ -93,15 +94,14 @@ dependencies {
     implementation(libs.squareup.picasso)
     //Hilt
     implementation(libs.dagger.hilt.android)
-    implementation(libs.androidx.activity)
     ksp(libs.dagger.hilt.android.compiler)
     //Test
     testImplementation(libs.junit)
-    testImplementation(libs.jetbrains.kotlinx.coroutines.test)
-    androidTestImplementation(libs.androidx.junit)
+    testImplementation(libs.kotlinx.coroutines.test)
+    androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.espresso.contrib)
-    androidTestImplementation(libs.androidx.rules)
+    androidTestImplementation(libs.androidx.test.rules)
     androidTestImplementation(libs.dagger.hilt.android.testing)
     androidTestImplementation(libs.androidx.navigation.testing)
     kspAndroidTest(libs.dagger.hilt.android.compiler)
