@@ -1,28 +1,34 @@
+import com.android.build.api.dsl.ApplicationExtension
+
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
     alias(libs.plugins.hilt.android)
     alias(libs.plugins.ksp)
 }
 
-android {
+configure<ApplicationExtension> {
     namespace = "com.yjotdev.zonasturisticaselguabo"
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.yjotdev.zonasturisticaselguabo"
         minSdk = 24
-        targetSdk = 36
+        targetSdk = 37
         versionCode = 6
         versionName = "1.6"
         testInstrumentationRunner = "com.yjotdev.zonasturisticaselguabo.CustomTestRunner"
+        androidResources.localeFilters += setOf("en", "es")
     }
     signingConfigs {
         create("release") {
-            keyAlias = project.findProperty("APP_KEY_ALIAS") as? String
-            keyPassword = project.findProperty("APP_KEY_PASSWORD") as? String
-            storePassword = project.findProperty("APP_STORE_PASSWORD") as? String
-            storeFile = project.findProperty("APP_STORE_FILE")?.let { rootProject.file(it) }
+            val storeFilePath = project.findProperty("APP_STORE_FILE") as? String
+            val storeFileObj = storeFilePath?.let { rootProject.file(it) }
+            if (storeFileObj != null && storeFileObj.exists()) {
+                keyAlias = project.findProperty("APP_KEY_ALIAS") as? String
+                keyPassword = project.findProperty("APP_KEY_PASSWORD") as? String
+                storePassword = project.findProperty("APP_STORE_PASSWORD") as? String
+                storeFile = storeFileObj
+            }
         }
     }
     buildTypes {
@@ -35,12 +41,15 @@ android {
             manifestPlaceholders.putAll(mapOf("MAPS_API_KEY" to mapsApiKey))
         }
         release {
-            signingConfig = signingConfigs.getByName("release")
+            val releaseSigningConfig = signingConfigs.findByName("release")
+            if (releaseSigningConfig?.storeFile != null && releaseSigningConfig.storeFile!!.exists()) {
+                signingConfig = releaseSigningConfig
+            }
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(
-                    getDefaultProguardFile("proguard-android-optimize.txt"),
-                    "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
             )
             ndk {
                 debugSymbolLevel = "FULL"
@@ -54,9 +63,6 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_21
         targetCompatibility = JavaVersion.VERSION_21
-    }
-    kotlinOptions {
-        jvmTarget = "21"
     }
     buildFeatures {
         viewBinding = true
@@ -72,6 +78,9 @@ android {
     }
     lint {
         disable += setOf("NotificationPermission")
+    }
+    testOptions {
+        animationsDisabled = true
     }
 }
 
