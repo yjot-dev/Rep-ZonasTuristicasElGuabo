@@ -14,21 +14,17 @@ configure<ApplicationExtension> {
         applicationId = "com.yjotdev.zonasturisticaselguabo"
         minSdk = 24
         targetSdk = 37
-        versionCode = 6
-        versionName = "1.6"
+        versionCode = 7
+        versionName = "1.7"
         testInstrumentationRunner = "com.yjotdev.zonasturisticaselguabo.CustomTestRunner"
         androidResources.localeFilters += setOf("en", "es")
     }
     signingConfigs {
         create("release") {
-            val storeFilePath = project.findProperty("APP_STORE_FILE") as? String
-            val storeFileObj = storeFilePath?.let { rootProject.file(it) }
-            if (storeFileObj != null && storeFileObj.exists()) {
-                keyAlias = project.findProperty("APP_KEY_ALIAS") as? String
-                keyPassword = project.findProperty("APP_KEY_PASSWORD") as? String
-                storePassword = project.findProperty("APP_STORE_PASSWORD") as? String
-                storeFile = storeFileObj
-            }
+            keyAlias = project.findProperty("APP_KEY_ALIAS") as? String
+            keyPassword = project.findProperty("APP_KEY_PASSWORD") as? String
+            storePassword = project.findProperty("APP_STORE_PASSWORD") as? String
+            storeFile = project.findProperty("APP_STORE_FILE")?.let { rootProject.file(it) }
         }
     }
     buildTypes {
@@ -41,10 +37,7 @@ configure<ApplicationExtension> {
             manifestPlaceholders.putAll(mapOf("MAPS_API_KEY" to mapsApiKey))
         }
         release {
-            val releaseSigningConfig = signingConfigs.findByName("release")
-            if (releaseSigningConfig?.storeFile != null && releaseSigningConfig.storeFile!!.exists()) {
-                signingConfig = releaseSigningConfig
-            }
+            signingConfig = signingConfigs.getByName("release")
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(

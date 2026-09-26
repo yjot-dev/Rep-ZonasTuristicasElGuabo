@@ -5,20 +5,15 @@ plugins {
     alias(libs.plugins.hilt.android) apply false
     alias(libs.plugins.ksp) apply false
 }
-
-// Carga el archivo custom.properties si existe
-val customPropsFile = file("custom.properties")
-if (customPropsFile.exists()) {
-    val customProperties = Properties()
-    customPropsFile.inputStream().use {
-        customProperties.load(it)
-    }
-    // Define las propiedades como variables globales del proyecto
-    customProperties.forEach { (key, value) ->
-        extra[key.toString()] = value
-    }
+// Carga el archivo custom.properties
+val customProperties = Properties()
+file("custom.properties").inputStream().use {
+    customProperties.load(it)
 }
-
+// Define las propiedades como variables globales del proyecto
+customProperties.forEach { (key, value) ->
+    extra[key.toString()] = value
+}
 // Configuración para capturar errores de Pruebas Unitarias e Instrumentales en cualquier módulo
 subprojects {
     tasks.withType<Test>().configureEach {
