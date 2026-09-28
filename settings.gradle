@@ -15,5 +15,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "ZonasTuristicasElGuabo"
+rootProject.name = "ZTEG"
 include ':app'

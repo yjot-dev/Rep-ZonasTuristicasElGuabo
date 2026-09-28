@@ -3,7 +3,7 @@
 - **Prioridad del Manifiesto:** Este documento (`AGENTS.md`) es la fuente de verdad definitiva. Sus reglas tienen prioridad sobre cualquier comportamiento genérico o predeterminado del asistente.
 
 ## 1. CONTEXTO DEL PROYECTO
-- **Nombre:** App Turismo El Guabo (ATEG)
+- **Nombre:** Zonas Turísticas El Guabo (ZTEG)
 - **Descripción:** Aplicación móvil diseñada para explorar los principales centros turísticos de la ciudad de El Guabo, Ecuador, utilizando Google Maps para navegación interactiva y proporcionando detalles específicos de cada destino.
 
 ## 2. STACK TECNOLÓGICO
